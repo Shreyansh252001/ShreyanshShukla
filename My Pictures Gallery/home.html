@@ -1,0 +1,201 @@
+<html>
+<head>
+    <link rel="stylesheet" href="home.css">
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"--->
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>home.html</title>
+  <script>
+      function RanMov()
+      {
+          var images = new Array("Angrezi Medium.jpg","Thappad.jpg","bhoot.jpg","street dancer.jpg","hacked.jpg","chapaak.jpg","hotel mumbai.jpg","shikara.jpg","drive.jpg");
+          var l = images.length;
+          var i,j,flag;
+          var values = new Array(l);
+          for(i=0;i<l;i++)
+          {
+            flag=0;
+            var rand = Math.floor(l*Math.random());
+            for(j=0;j<i;j++)
+            {
+              if(values[j]==rand)
+              {
+                flag++;
+              }
+            }
+            if(flag>0)
+            {
+              i--;
+            }
+            else
+            {
+              values[i]=rand;
+              console.log(values[i]);
+            }
+          }
+          for(i=0;i<l;i++)
+          {
+            document.getElementById("M"+(i+1)).src=images[values[i]];
+          }
+      }
+      function RanMov1()
+      {
+          var images =new Array("SACHIN A billion Dreams.jpg","MS DHONI The Untold Story.jpg","Sanju.jpg","Dangal.jpg","Bhag Milkha Bhag.jpg","Mary Kom.jpg","Super 30.jpg","Neerja.jpg","Sarabjit.jpg","83.jpg","PM Narendra Modi.jpg");
+          var l = images.length;
+          var i,j,flag;
+          var values = new Array(l)
+          for(i=0;i<l;i++)
+          {
+            flag=0;
+            var rand = Math.floor(l*Math.random());
+            for(j=0;j<i;j++)
+            {
+              if(values[j]==rand)
+              {
+                flag++;
+              }
+            }
+            if(flag>0)
+            {
+              i--;
+            }
+            else
+            {
+              values[i]=rand;
+              console.log(values[i]);
+            }
+          }
+          for(i=0;i<l;i++)
+          {
+            document.getElementById("N"+(i+1)).src=images[values[i]];
+          }
+      }
+        function openNav() {
+            var el = document.getElementById("mySidenav");
+            console.log(el);
+            el.classList.remove("close");
+            el.classList.add("open");
+            console.log(el);
+           /* document.getElementById("mySidenav").s;*/
+        }
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width="0";
+            document.getElementById("mySidenav").add("close");
+        }   
+        function BMI()
+        {
+            var w = prompt("Enter Weight in kg");
+            var h = prompt("Enter Height in m");
+            var b = w/(h*h);
+            if(b<16){
+                alert("BMI = "+b+"\n"+"Severely Thin");
+            }
+            else if(b>=16 && b<18.5)
+            {
+                alert("BMI = "+b+"\n"+"Thin");
+            }
+            else if(b>=18.5 && b<25)
+            {
+                alert("BMI = "+b+"\n"+"Healthy");
+            }
+            else if(b>=25 && b<30)
+            {
+                alert("BMI = "+b+"\n"+"Overweight");
+            }
+            else if(b>=30)
+            {
+                alert("BMI = "+b+"\n"+"Obese");
+            }
+        }
+        function Zodiac(){
+            var day = prompt("Enter Date (1-31)");
+            var month = prompt("Enter Month (1-12)");
+            if((month == 1 && day <= 20) || (month == 12 && day >=22)) {
+                alert("Capricorn");
+            } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+                alert("Aquarius");
+            } else if((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+                alert("Pisces");
+            } else if((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+                alert("Aries");
+            } else if((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+                alert("Taurus");
+            } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+                alert("Gemini");
+            } else if((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+                alert("Cancer");
+            } else if((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+                alert("Leo");
+            } else if((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+                alert("Virgo");
+            } else if((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+                alert("Libra");
+            } else if((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+                alert("Scorpio");
+            } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+                alert("Sagittarius");
+            }
+        }
+    </script>
+</head>
+<body> 
+<div class="navbar">
+    <nav>
+    <!---<a class="active" href="#home">Home</a>-->
+    <div class="dropdown">
+        <button class="dropbtn" href="" >MOVIES</button>
+            <div class="dropdown-content">
+                <button class="Shuffle" onclick="RanMov()">Shuffle</button>
+                <a href=""><figure><img id="M1"src="Angrezi Medium.jpg" width="100" height="150" alt="Angrezi Medium"><figcaption id="M1">Angrezi Medium</figcaption></figure></a></img></a>
+                <a href=""><figure><img id="M2"src="Thappad.jpg" width="100" height="150" alt="Thappad"><figcaption id="M2">Thappad</figcaption></figure></a>
+                <a href=""><figure><img id="M3" src="bhoot.jpg" width="100" height="150" alt="Bhoot:part one:-The haunted Ship" ><figcaption id="M3">Bhoot:Part One:-The Haunted Ship</figcaption></figure></a>
+                <a href=""><figure><img id="M4" src="street dancer.jpg" width="100" height="150" alt="street dancer"><figcaption id="M4">Street Dancer 3D</figcaption></figure></a>
+                <a href=""><figure><img id="M5" src="hacked.jpg" width="100" height="150" alt="Hacked"><figcaption id="M5">Hacked</figcaption></figure></a>
+                <a href=""><figure><img id="M6" src="chapaak.jpg" width="100" height="150" alt="chapaak"><figcaption id="M6"></figcaption>Chhapaak</figcaption></figure></a>
+                <a href=""><figure><img id="M7" src="hotel mumbai.jpg" width="150" height="100" alt="Hotel Mumbai" id="M7"><figcaption> Hotel Mumbai</figcaption></figure></a>
+                <a href=""><figure><img id="M8" src="shikara.jpg" width="100" height="150" alt="Shikara"><figcaption id="M8">Shikara</figcaption></figure></a>
+                <a href=""><figure><img id="M9" src="drive.jpg" width="100" height="150" alt="Drive"><figcaption id="M9">Drive</figcaption></figure></a>
+            </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" href="">FAMOUS PERSONALITIES</button>
+                    <div class="dropdown-content">
+                        <button class="Shuffle" onclick="RanMov1()">Shuffle</button>
+                            <a href=""><figure><img id="N1" src="SACHIN A billion Dreams.jpg" width="100" height="150" alt="SACHIN:A billion Dreams"><figcaption>SACHIN:A Billion Dreams</figcaption></figure></a>
+                            <a href=""><figure><img id="N2" src="MS DHONI The Untold Story.jpg" width="100" height="150" alt="MS DHONI:The Untold Story"><figcaption>MS DHONI:The Untold Story</figcaption></figure></a>
+                            <a href=""><figure><img id="N3" src="Sanju.jpg" width="100" height="150" alt="Sanju"><figcaption>Sanju</figcaption></figure></a>
+                            <a href=""><figure><img id="N4" src="Dangal.jpg" width="100" height="150" alt="Dangal"><figcaption>Dangal</figcaption></figure></a>
+                            <a href=""><figure><img id="N5"src="Bhag Milkha Bhag.jpg" width="100" height="150" alt="Bhag Milkha Bhag"><figcaption>Bhag Milkha Bhag</figcaption></figure></a>
+                            <a href=""><figure><img id="N6"src="Mary Kom.jpg" width="150" height="100" alt="Mary Kom"><figcaption>Mary Kom</figcaption></figure></a>
+                            <a href=""><figure><img id="N7"src="Super 30.jpg" width="100" height="150" alt="Super 30"><figcaption>Super 30</figcaption></figure></a>
+                            <a href=""><figure><img id="N8"src="Neerja.jpg" width="150" height="150" alt="Neerja"><figcaption>Neerja</figcaption></figure></a>
+                            <a href=""><figure><img id="N9"src="Sarabjit.jpg" idth="100" height="150" alt="Sarabjit"><figcaption>Sarabjit</figcaption></figure></a>
+                            <a href=""><figure><img id="N10"src="83.jpg" width="100" height="150" alt="1983 world cup based film"><figcaption>83</figcaption></figure></a>
+                            <a href=""><figure><img id="N11"src="PM Narendra Modi.jpg" width="100" height="150" alt="PM:Narendra Modi"><figcaption>PM:Narendra Modi</figcaption></figure></a>
+                        </div>
+                    </div>
+    <a onclick="openNav()" href="#" class="util,close,open">Utilities</a>
+    </nav>
+</div>
+<div id="mySidenav" class="sidenav close" style="width:250px">
+   <a href="#" class="closebtn" onclick="closeNav()">×</a>
+   <a href="#" onclick="Zodiac()">Zodiac</a>
+   <a href="#" onclick="BMI()">BMI</a>
+</div>
+
+
+<footer class="navbar" id="footer">
+    <!--div id=container--->
+<!---div class="navbar" id=myNavbar--->
+    <b> 
+    <a href="">Shreyansh Shukla</a></tab>
+    <a href="">201800283</a>
+    <a href="">27</a>
+    <a href="Shreyansh252001@gmail.com">Email-id:-Shreyansh252001@gmail.com</a>
+    </b>
+<!---/div--->
+    <!----div--->
+</footer>
+</body>
+</html>
