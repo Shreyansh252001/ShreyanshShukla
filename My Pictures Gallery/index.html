@@ -70,18 +70,22 @@
             document.getElementById("N"+(i+1)).src=images[values[i]];
           }
       }
-        function openNav() {
+      function openNav() {
             var el = document.getElementById("mySidenav");
             console.log(el);
-            el.classList.remove("close");
+            if(el.classList.contains("close"))
+                el.classList.remove("close");
             el.classList.add("open");
             console.log(el);
-           /* document.getElementById("mySidenav").s;*/
         }
-        function closeNav() 
+       function closeNav() 
         {
-            document.getElementById("mySidenav").style.width="0";
-            document.getElementById("mySidenav").add("close");
+            var el = document.getElementById("mySidenav");
+            console.log(el);
+            if(el.classList.contains("open"))
+                el.classList.remove("open");
+            console.log(el);
+            el.classList.add("close");
         }   
         function BMI()
         {
